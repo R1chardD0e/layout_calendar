@@ -1,4 +1,5 @@
 $calendar-box-size: 100px;
+$gap-size: 1px;
 
 @mixin flex-center {
   display: flex;
@@ -40,7 +41,7 @@ body {
   align-content: flex-start;
   flex-wrap: wrap;
   width: calc($calendar-box-size * 7 + 6px);
-  gap: 1px;
+  gap: $gap-size;
   padding: 5px;
   max-height: 100vh;
   max-width: 100vw;
@@ -67,7 +68,7 @@ body {
   @each $day in $days {
     &--start-day-#{$day} {
       .calendar__day:first-child {
-        margin-left: calc($index * 101px);
+        margin-left: calc($index * ($calendar-box-size + $gap-size));
       }
     }
 
